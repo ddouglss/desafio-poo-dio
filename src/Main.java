@@ -1,4 +1,6 @@
+import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -9,12 +11,7 @@ public class Main {
 
         Curso curso = new Curso();
         Mentoria mentoria = new Mentoria();
-
-        List<Curso> cursos = List.of(
-                new Curso("Curso C#", "Curso de C#", 240),
-                new Curso("Curso js", "Curso de js", 120)
-        );
-        cursos.forEach(System.out::println);
+//        Conteudo conteudo = new Curso(); //polimorfismo
 
         System.out.println("==========================================");
 
@@ -26,17 +23,41 @@ public class Main {
         System.out.println("==========================================");
 
 
-        List<Mentoria> mentorias = List.of(
-                new Mentoria("mentoria java", "mentoria de java", LocalDate.now())
-
-        );
-        mentorias.forEach(System.out::println);
-        System.out.println("==========================================");
-
         mentoria.setTitulo("mentoria C#");
         mentoria.setDescricao("mentoria de C#");
         mentoria.setData(LocalDate.now());
         System.out.println(mentoria);
+
+        System.out.println("==========================================");
+
+        Bootcamp bootcamp = new Bootcamp();
+
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Bootcamp de Java Developer");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev dev = new Dev();
+        dev.setNome("Joao");
+        dev.increverBootcamp(bootcamp);
+        dev.progredir();
+        dev.progredir();
+
+        System.out.println("Countéudos inscritos: " + dev.getConteudosInscritos());
+        System.out.println("Countéudos concluidos: " + dev.getConteudosConcluidos());
+        System.out.println("Xp total: " + dev.calcularXp());
+
+        Dev dev2 = new Dev();
+        dev2.setNome("Maria");
+        dev2.increverBootcamp(bootcamp);
+        dev2.progredir();
+        System.out.println("Countéudos inscritos: " + dev2.getConteudosInscritos());
+        System.out.println("Countéudos concluidos: " + dev2.getConteudosConcluidos());
+
+
+
+
+
 
 
     }
