@@ -149,4 +149,4 @@ Se possível:<br>
 
 ------------
 
-Disponibilizado por [cami-la](https://www.linkedin.com/in/ddouglss/ "ddouglss").
+Disponibilizado por [Douglas](https://www.linkedin.com/in/ddouglss/ "ddouglss").
